@@ -1,0 +1,55 @@
+
+<div class="container">
+    <h2>Contact Form</h2>
+  
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+  
+      <!-- <div ngModelGroup="userDetails" #userDetails="ngModelGroup"> -->
+       
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" name="firstname" placeholder="Enter your first name" class="form-control" #fname="ngModel" ngModel required>
+        </div>
+        <small *ngIf="fname.invalid && fname.touched">First name is a required field</small>
+  
+  
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" name="lastname" placeholder="Enter your last name" class="form-control" #lname="ngModel" ngModel required>
+        </div>
+        <small *ngIf="lname.invalid && lname.touched">Last name is a required field</small>
+  
+  
+        <div class="form-group">
+          <label for="email">your email</label>
+          <input type="email" name="email" placeholder="Enter your email " class="form-control" #email="ngModel" ngModel required email>
+        </div>
+        <small *ngIf="email.invalid && email.touched">Email is a required field</small>
+  
+        <div class="form-group">
+          <label for="fname">Mobile number</label>
+          <input type="number" name="mobilenumber" ng-model="mobNo" ng-minlength="10" ng-maxlength="10"
+            placeholder="Enter a valid mobile number" class="form-control" #mobile="ngModel" ngModel required>
+        </div>
+        <small *ngIf="mobile.invalid && mobile.touched">Mobile number is a required field</small>
+  
+        <div class="form-group">
+          <label for="pin">Postal Code</label>
+          <input type="number" name="pincode" ng-minlength="6" ng-maxlength="6"
+            placeholder="Enter your 6 digit postal code" class="form-control" #postal="ngModel" ngModel required>
+        </div>
+        <small *ngIf="postal.invalid && postal.touched">Postal code is a required field</small>
+      <!-- </div> -->
+  
+      <!-- <div>
+        <small *ngIf="userDetails.invalid && userDetails.touched">Some of the required field does not have valid
+          value</small>
+      </div> -->
+
+ 
+      <div class="on-submit">
+        <input type="submit" name="onSubmit" class="btn btn-success" [disabled]="!userForm.valid">
+      </div>
+    </form>
+  </div>
+  

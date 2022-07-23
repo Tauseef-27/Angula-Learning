@@ -1,0 +1,32 @@
+<p style="text-align: center;">Students Details</p>
+<!-- <h1>
+    {{jdata.student[0] | json}}
+    <br>
+    {{jdata.student[1] | json}}
+    <br>
+    {{jdata.student[2] | json}}
+</h1>  -->
+<table class="center">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of jdata.student">
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.age}}</td>
+            <td>{{data.number}}</td>
+
+        </tr>
+    </tbody>
+</table>
+<div>
+    
+</div>
